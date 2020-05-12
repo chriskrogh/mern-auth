@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
 import UserRouter from './src/routers/user';
+import 'dotenv/config';
 
 // create server
 const app = express();
