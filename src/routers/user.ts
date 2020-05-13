@@ -32,6 +32,7 @@ router.post('/api/users', async (req: Request, res: Response) => {
     }
 });
 
+// third party authentication
 router.post('/api/users/thirdPartyAuth', async (req: Request, res: Response) => {
     try {
         const { email, secret } = req.body;
@@ -96,6 +97,21 @@ router.get('/api/users', auth, async (req: Request, res: Response) => {
             throw new Error('User not found');
         }
         res.send(user);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send();
+    }
+});
+
+// REMOVE THIS ROUTE
+// get all users
+router.get('/api/users/all', async (req: Request, res: Response) => {
+    try {
+        const users = await UserModel.find({});
+        if (!users) {
+            throw new Error('User not found');
+        }
+        res.send(users);
     } catch (err) {
         console.log(err);
         res.status(404).send();
