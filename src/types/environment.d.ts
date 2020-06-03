@@ -1,10 +1,10 @@
 declare global {
-    namespace NodeJS {
-        interface ProcessEnv {
-            APP_SECRET: string;
-            NODE_ENV: 'development' | 'production';
-        }
+  namespace NodeJS {
+    interface ProcessEnv {
+      APP_SECRET: string;
+      NODE_ENV: 'development' | 'production';
     }
+  }
 }
 
 // If this file has no import/export statements (i.e. is a script)
