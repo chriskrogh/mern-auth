@@ -1,1 +1,3 @@
-export const USERS = '/api/users';
+export enum APIRoutes {
+  USER = '/api/user',
+}
